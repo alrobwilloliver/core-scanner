@@ -7,10 +7,11 @@ import { Browser } from 'puppeteer';
 import logger from '../logger';
 import { BrowserInstance, BrowserService } from '../services/browser.service';
 import { Issue } from "../type/issue";
-import { BullConfig } from '../scanner-core.config';
+import { BullConfig } from '../type/scanner-core';
 
-import { PROCESSOR_NAME } from '../scanner-core.config';
 import { createAnalyser } from '../analyser/analyser-factory';
+
+export const PROCESSOR_NAME = process.env.PROCESSOR_NAME ?? "scan";
 
 export type ScanJob =  {
     authHeader: string;

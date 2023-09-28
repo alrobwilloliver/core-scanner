@@ -4,12 +4,7 @@ import logger from "../logger";
 
 import { AxeAnalyser } from "./axe/AxeAnalyser";
 import { CodeSnifferAnalyser } from "./code-sniffer/CodeSnifferAnalyser";
-
-export enum analyserType {
-    AXE = "axe",
-    CODE_SNIFFER = "code-sniffer",
-    CSS = "css"
-}
+import { analyserType } from "../type/scanner-core";
 
 export function createAnalyser(analyserType: analyserType | string, page: Page, rules: any[] = []) {
     switch (analyserType) {

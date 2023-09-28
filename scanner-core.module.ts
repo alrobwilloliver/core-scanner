@@ -1,18 +1,31 @@
 import { DynamicModule, Module, MiddlewareConsumer, NestModule } from "@nestjs/common";
+import { BullModule } from "@nestjs/bull";
 
-import { ScannerCoreConfig } from "./scanner-core.config";
+import { Config } from "../config";
 
 import { BrowserService } from "./services/browser.service";
 import { ScanProcessor } from "./processor/scan.processor";
+import { ScanController } from "src/scanner/controllers/scanner.controller";
 
 @Module({})
 export class ScannerCoreModule implements NestModule
 {
-    public static register(config: ScannerCoreConfig): DynamicModule
+    public static register(config: Config): DynamicModule
     {
         return {
             module: ScannerCoreModule,
+            imports: [
+                BullModule.registerQueue(
+                    {
+                        name: config.bull.processorName,
+                        settings: {
+                            maxStalledCount: 0,
+                        }
+                    },
+                ),
+            ],
             providers: [
+                ScanProcessor,
                 {
                     provide: "CONFIG",
                     useValue: config,
@@ -22,9 +35,10 @@ export class ScannerCoreModule implements NestModule
                     useValue: config.bull,
                 },
                 BrowserService,
-                ScanProcessor,
             ],
-            controllers: [],
+            controllers: [
+                ScanController
+            ],
             exports: [],
         };
     }
