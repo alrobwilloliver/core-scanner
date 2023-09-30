@@ -12,5 +12,11 @@ Use the abstract analyser class to find accessiblity issues.
 ### Queuing at Scale
 Use Bull MQ to process many or CPU intensive jobs with a dynamic queue processor.
 
+### Cluster Service
+Increase the number workers of the application. User WORKER_COUNT env variable to set the number of workers. Clusterize the starting function in main.ts to use more CPU cores.
+```js
+ClusterService.clusterize(bootstrap);
+```
+
 ### Journey Scans
 Send custom user instructions to allow for journey scans applying user actions in puppeteer to interact with a puppeteer page. -- not yet implemented
