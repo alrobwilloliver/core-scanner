@@ -18,15 +18,3 @@
     "include": ["src/**/*"],
     "exclude": ["node_modules", "dist", "test", "**/*spec.ts"]
   }
-//   {
-//     "compilerOptions": {
-//         "removeComments": true,
-//         "target": "esnext",
-//         "baseUrl": "./",
-//         "incremental": true,
-//         "skipLibCheck": true,
-//         "strictBindCallApply": true,
-//         "forceConsistentCasingInFileNames": true,
-//         "noFallthroughCasesInSwitch": true
-//     }
-// }
