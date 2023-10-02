@@ -1,9 +1,9 @@
 {
   "name": "core-scanner",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "This is a repo to add code which can be shared across all our nestjs Recite Me Scanner services. Any shared code can be created, updated and used here. This will make us more productive not having to make updates across multiple scanners at once.",
-  "main": "dist/index.ts",
-  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.js",
   "scripts": {
     "build": "rimraf dist && tsc",
     "prepublish": "npm run build"
