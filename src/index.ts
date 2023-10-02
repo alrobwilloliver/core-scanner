@@ -1,1 +1,1 @@
-export * from "../scanner-core.module";
+export * from "./scanner-core.module";

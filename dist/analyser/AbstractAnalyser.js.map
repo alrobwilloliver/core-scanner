@@ -1,0 +1,1 @@
+{"version":3,"file":"AbstractAnalyser.js","sourceRoot":"","sources":["../../src/analyser/AbstractAnalyser.ts"],"names":[],"mappings":";;;AAGA,MAAsB,gBAAgB;IAClC,IAAI,CAAO;IACX,KAAK,CAAQ;IACb,YAAY,IAAU,EAAE,QAAe,EAAE;QACrC,IAAI,CAAC,IAAI,GAAG,IAAI,CAAC;QACjB,IAAI,CAAC,KAAK,GAAG,KAAK,CAAC;IACvB,CAAC;CAGJ;AATD,4CASC"}

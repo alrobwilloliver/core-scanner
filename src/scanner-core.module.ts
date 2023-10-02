@@ -1,11 +1,11 @@
 import { DynamicModule, Module, MiddlewareConsumer, NestModule } from "@nestjs/common";
 import { BullModule } from "@nestjs/bull";
 
-import { Config } from "../config";
+import { Config } from "./config";
 
 import { BrowserService } from "./services/browser.service";
 import { ScanProcessor } from "./processor/scan.processor";
-import { ScanController } from "src/scanner/controllers/scanner.controller";
+import { ScanController } from "./controllers/scanner.controller";
 
 @Module({})
 export class ScannerCoreModule implements NestModule

@@ -1,0 +1,1 @@
+{"version":3,"file":"payload.dto.d.ts","sourceRoot":"","sources":["../../src/dtos/payload.dto.ts"],"names":[],"mappings":"AAIA,8BAAsB,aAAa,CAAC,OAAO;IAQhC,QAAQ,EAAG,MAAM,CAAA;IAQjB,MAAM,EAAG,MAAM,CAAA;IAQf,OAAO,CAAC,EAAE,MAAM,CAAA;IAQhB,eAAe,CAAC,EAAE,MAAM,CAAA;IAE/B,SAEgB,OAAO,EAAE,OAAO,CAAA;CACnC"}

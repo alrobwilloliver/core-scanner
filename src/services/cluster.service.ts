@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 
 import cluster from "cluster";
 import * as process from 'node:process';
-import logger from '../../logger';
+import logger from '../logger';
 
 const workerCount = parseInt(process.env.WORKER_COUNT || "1", 10);
 
