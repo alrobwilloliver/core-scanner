@@ -4,7 +4,7 @@ import { BullModule } from "@nestjs/bull";
 import { Config } from "./config";
 
 import { BrowserService } from "./services/browser.service";
-import { ScanProcessor } from "./processor/scan.processor";
+import { PROCESSOR_NAME, ScanProcessor } from "./processor/scan.processor";
 import { ScanController } from "./controllers/scanner.controller";
 
 @Module({})
@@ -36,9 +36,7 @@ export class ScannerCoreModule implements NestModule
                 },
                 BrowserService,
             ],
-            controllers: [
-                ScanController
-            ],
+            controllers: PROCESSOR_NAME === "assets" ? [] : [ScanController],
             exports: [],
         };
     }

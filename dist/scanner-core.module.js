@@ -37,9 +37,7 @@ let ScannerCoreModule = ScannerCoreModule_1 = class ScannerCoreModule {
                 },
                 browser_service_1.BrowserService,
             ],
-            controllers: [
-                scanner_controller_1.ScanController
-            ],
+            controllers: scan_processor_1.PROCESSOR_NAME === "assets" ? [] : [scanner_controller_1.ScanController],
             exports: [],
         };
     }
