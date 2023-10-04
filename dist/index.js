@@ -18,4 +18,5 @@ __exportStar(require("./scanner-core.module"), exports);
 __exportStar(require("./services/cluster.service"), exports);
 __exportStar(require("./processor/scan.processor"), exports);
 __exportStar(require("./bos/user.bo"), exports);
+__exportStar(require("./services/browser.service"), exports);
 //# sourceMappingURL=index.js.map
