@@ -47,7 +47,7 @@ export class ScanProcessor {
         user_agent: job.data.user_agent,
       });
 
-      job.data.issues = await createAnalyser(PROCESSOR_NAME, this.browserInstance.page, job.data.rules).analyse();
+      job.data.issues = await createAnalyser(this.bullConfig.processorName, this.browserInstance.page, job.data.rules).analyse();
     } catch (err: any) {
       logger.warn(`Error scanning url: ${job.data.scanUrl} with error message: ${err.message}`);
       // throw the error to initiate a retry unless exceeding max retry (attempts starts from 0)
@@ -56,7 +56,7 @@ export class ScanProcessor {
         logger.debug(`Retrying scan for url: ${job.data.scanUrl} Attempt: ${job.data.attempts + 1}`);
 
         // must add a new scan to the list with priority 1 to retry instantly
-        await this.scanQueue.add("scan-axe", {
+        await this.scanQueue.add(this.bullConfig.processorName, {
           scanUrl: job.data.scanUrl,
           job_id: job.data.job_id,
           authHeader: job.data.authHeader,

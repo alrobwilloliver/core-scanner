@@ -42,7 +42,7 @@ let ScanProcessor = class ScanProcessor {
                 timeout: job.data.timeout,
                 user_agent: job.data.user_agent,
             });
-            job.data.issues = await (0, analyser_factory_1.createAnalyser)(exports.PROCESSOR_NAME, this.browserInstance.page, job.data.rules).analyse();
+            job.data.issues = await (0, analyser_factory_1.createAnalyser)(this.bullConfig.processorName, this.browserInstance.page, job.data.rules).analyse();
         }
         catch (err) {
             logger_1.default.warn(`Error scanning url: ${job.data.scanUrl} with error message: ${err.message}`);
@@ -51,7 +51,7 @@ let ScanProcessor = class ScanProcessor {
                 job.data.failed = true;
                 logger_1.default.debug(`Retrying scan for url: ${job.data.scanUrl} Attempt: ${job.data.attempts + 1}`);
                 // must add a new scan to the list with priority 1 to retry instantly
-                await this.scanQueue.add("scan-axe", {
+                await this.scanQueue.add(this.bullConfig.processorName, {
                     scanUrl: job.data.scanUrl,
                     job_id: job.data.job_id,
                     authHeader: job.data.authHeader,
